@@ -10,6 +10,7 @@ var expressValidator = require('express-validator');
 // Authentication Packages
 var session = require('express-session');
 var passport = require('passport');
+var MySQLStore = require('express-mysql-session')(session);
 
 
 var index = require('./routes/index');
@@ -32,10 +33,22 @@ app.use(expressValidator()); // this line must be immediately after any of the b
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var options = {
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database : process.env.DB_NAME,
+    socketPath: ""
+    //socketPath: 'C:/xampp/mysql/mysql.sock'
+};
+
+var sessionStore = new MySQLStore(options);
+
 app.use(session({
     secret: 'alkdjfladjlfkj',
     resave: false,
     saveUninitialized: false,
+    store: sessionStore
     //cookie: { secure: true}
 }));
 app.use(passport.initialize());

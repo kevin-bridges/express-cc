@@ -8,10 +8,18 @@ var bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
     console.log(req.user);
     console.log(req.isAuthenticated());
     res.render('home', { title: 'Home' });
+});
+
+router.get('/profile', authenticationMiddleware() ,function(req, res) {
+    res.render('profile', { title: 'Profile' });
+});
+
+router.get('/login', function(req, res) {
+    res.render('login', { title: 'Login' });
 });
 
 router.get('/register', function(req, res, next) {
@@ -79,5 +87,14 @@ passport.deserializeUser(function(user_id, done) {
     //done(err, user_id);
     done(null, user_id);
 });
+
+function authenticationMiddleware() {
+    return (req, res, next) => {
+        console.log(`req.session.passport.user: ${JSON.stringify(req.session.passport)}`);
+
+        if (req.isAuthenticated()) return next();
+        res.redirect('/login')
+    }
+}
 
 module.exports = router;
