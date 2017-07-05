@@ -1,3 +1,5 @@
+# I'm following a tutorial series and wanted to store my work in Github for readability. The code here was not created by me.
+
 # Following tutorial from Chris Courses: https://www.youtube.com/channel/UC9Yp2yz6-pwhQuPlIDV_mjA
 
  
