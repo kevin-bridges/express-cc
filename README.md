@@ -20,8 +20,10 @@
  ## Part 5 - Integrating Express-Session and Passport.js
             https://www.youtube.com/watch?v=hNinO6-bDVM
   
- ## Part 6 - Session Stores and Restricting Page Access (current)
+ ## Part 6 - Session Stores and Restricting Page Access
             https://www.youtube.com/watch?v=gTowbsNPp9I
   
- ## Part 7 - Creating a Login Page
+ ## Part 7 - Creating a Login Page (finished)
             https://www.youtube.com/watch?v=qaaUfaieHcE
+            
+ ## Waiting on part 8 
