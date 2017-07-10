@@ -23,7 +23,8 @@
  ## Part 6 - Session Stores and Restricting Page Access
             https://www.youtube.com/watch?v=gTowbsNPp9I
   
- ## Part 7 - Creating a Login Page (finished)
+ ## Part 7 - Creating a Login Page
             https://www.youtube.com/watch?v=qaaUfaieHcE
             
- ## Waiting on part 8 
+ ## Part 8 - Creating a Logout Button and Dynamic Header
+            https://www.youtube.com/watch?v=mFVqL5aIjSE
